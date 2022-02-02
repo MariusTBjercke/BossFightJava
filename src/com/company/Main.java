@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 
@@ -20,6 +21,11 @@ public class Main {
             } else {
                 boss.Fight(hero);
                 hero.Fight(boss);
+            }
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
 
